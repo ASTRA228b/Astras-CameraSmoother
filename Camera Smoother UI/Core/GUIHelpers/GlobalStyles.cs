@@ -22,16 +22,7 @@ public static class GlobalStyles
         SliderThumbtex = Texturing.MakeItWork(1, 1, sliderThumbColor);
         Background = Texturing.MakeItWork(1, 1, ButtonColor);
         WindowStyle = new GUIStyle(GUI.skin.window);
-        WindowStyle.normal.background = Windowtex;
-        WindowStyle.hover.background = Windowtex;
-        WindowStyle.active.background = Windowtex;
-        WindowStyle.focused.background = Windowtex;
-        WindowStyle.onNormal.background = Windowtex;
-        WindowStyle.onHover.background = Windowtex;
-        WindowStyle.onActive.background = Windowtex;
-        WindowStyle.onFocused.background = Windowtex;
-        WindowStyle.normal.textColor = Color.white;
-        WindowStyle.fontStyle = FontStyle.Normal;
+        Buttonss = new GUIStyle(GUI.skin.button);
         SliderStyle = new GUIStyle(GUI.skin.horizontalSlider);
         SliderThumbStyle = new GUIStyle(GUI.skin.horizontalSliderThumb);
         SliderStyle.normal.background = Slidertex;
@@ -40,15 +31,8 @@ public static class GlobalStyles
         SliderThumbStyle.normal.background = SliderThumbtex;
         SliderThumbStyle.active.background = SliderThumbtex;
         SliderThumbStyle.hover.background = SliderThumbtex;
-        Buttonss = new GUIStyle(GUI.skin.button);
-        Buttonss.normal.background = Background;
-        Buttonss.active.background = Background;
-        Buttonss.hover.background = Background;
-        Buttonss.focused.background = Background;
-        Buttonss.onNormal.background = Background;
-        Buttonss.onActive.background = Background;
-        Buttonss.onHover.background = Background;
-        Buttonss.onFocused.background = Background;
+        WindowStyle.normal.textColor = Color.white;
+        WindowStyle.fontStyle = FontStyle.Normal;
         Buttonss.normal.textColor = Color.white;
         Buttonss.hover.textColor = Color.blue;
         Buttonss.active.textColor = Color.red;
@@ -57,5 +41,19 @@ public static class GlobalStyles
         Buttonss.onHover.textColor = Color.blue;
         Buttonss.onActive.textColor = Color.blue;
         Buttonss.onFocused.textColor = Color.blue;
+        // only used for buttons and windows 
+        ApplyBackground(Buttonss, Background);
+        ApplyBackground(WindowStyle, Windowtex);
+    }
+    public static void ApplyBackground(GUIStyle style, Texture2D tex)
+    {
+        style.normal.background = tex;
+        style.hover.background = tex;
+        style.active.background = tex;
+        style.focused.background = tex;
+        style.onNormal.background = tex;
+        style.onHover.background = tex;
+        style.onActive.background = tex;
+        style.onFocused.background = tex;
     }
 }
